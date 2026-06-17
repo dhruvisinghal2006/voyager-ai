@@ -1,13 +1,34 @@
 class ItineraryAgent:
 
-    def create_itinerary(self, days):
+    def create_itinerary(self, destination, days):
 
-        itinerary = []
+        itineraries = {
 
-        for day in range(1, days + 1):
+            "Goa": [
+                "Visit Baga Beach",
+                "Explore Fort Aguada",
+                "Enjoy Water Sports",
+                "Sunset Cruise"
+            ],
 
-            itinerary.append(
-                f"Day {day}: Explore local attractions"
-            )
+            "Manali": [
+                "Visit Hadimba Temple",
+                "Explore Solang Valley",
+                "Visit Rohtang Pass",
+                "Shopping at Mall Road"
+            ],
 
-        return itinerary
+            "Jaipur": [
+                "Visit Amer Fort",
+                "Explore City Palace",
+                "See Hawa Mahal",
+                "Shopping at Johari Bazaar"
+            ]
+        }
+
+        plan = itineraries.get(
+            destination,
+            ["Explore local attractions"]
+        )
+
+        return plan[:days]
